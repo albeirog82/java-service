@@ -10,6 +10,7 @@ public class RulesController {
 	@PostMapping("/rules")
 	public void RulesAnalysis(@RequestBody Perfil perfil) {
 		System.out.println("hello " + perfil.getNombreCompania());
+		System.out.println("date " + perfil.getFechaCreacion());
 		RulesService rules = new RulesService();
 		rules.applyRules(perfil);
 	}
