@@ -1,0 +1,11 @@
+package com.example.restservice
+
+
+rule "test"
+	when 
+		$j: Perfil()
+	then
+		System.out.println("Test rule");
+
+end 
+	
