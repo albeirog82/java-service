@@ -4,9 +4,18 @@ import java.time.LocalDate;
 
 public class Perfil {
 	
+	private Integer companyId; 
 	private String nombreCompania;
 	private LocalDate fechaCreacion;
 
+	public Integer getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(Integer companyId) {
+		this.companyId = companyId;
+	}	
+	
 	public String getNombreCompania() {
 		return nombreCompania;
 	}

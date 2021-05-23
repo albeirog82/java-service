@@ -3,9 +3,10 @@ package com.example.restservice
 
 rule "test"
 	when 
-		$j: Perfil()
+		$j: PerfilAnalizado()
 	then
 		System.out.println("Test rule");
+		$j.setScore(50);
 
 end 
 	
