@@ -5,8 +5,370 @@ rule "test"
 	when 
 		$j: PerfilAnalizado()
 	then
-		System.out.println("Test rule");
 		$j.setScore(50);
 
 end 
+
+rule "E_1_experienciaLaboral"
+	when
+		$j: PerfilAnalizado(E_1_experienciaLaboral == 1)
+	then
+		System.out.println("E_1_experienciaLaboral(T2)"); 
+		$j.setT2(0.02);
+end
+
+rule "E_2_Experienciacomoemprendedores"
+	when
+		$j: PerfilAnalizado(E_2_Experienciacomoemprendedores == 1)
+	then
+		System.out.println("E_2_Experienciacomoemprendedores (T2)"); 
+		$j.setT2(0.02);
+end
+
+rule "E_3_Experienciaeneltema"
+	when
+		$j: PerfilAnalizado(E_3_Experienciaeneltema == 1)
+	then
+		System.out.println("E_3_Experienciaeneltema (T2)"); 
+		$j.setT2(0.02);
+end	
+
+rule "E_4_TipodeExperienciaeneltema"
+	when
+		$j: PerfilAnalizado(E_4_TipodeExperienciaeneltema != "" && E_4_TipodeExperienciaeneltema != null)
+	then
+		System.out.println("E_4_TipodeExperienciaeneltema (T2)"); 
+		$j.setT2(0.02);
+end	
+
+rule "E_5_TrayectoriaEquipo"
+	when
+		$j: PerfilAnalizado(E_5_TrayectoriaEquipo == 1)
+	then
+		System.out.println("E_5_TrayectoriaEquipo (T2)"); 
+		$j.setT2(0.02);
+end	
+
+rule "E_6_ExperienciadelEmprendimientoenelEcosistema"
+	when
+		$j: PerfilAnalizado(E_6_ExperienciadelEmprendimientoenelEcosistema == 1)
+	then
+		System.out.println("E_6_ExperienciadelEmprendimientoenelEcosistema (T3)"); 
+		$j.setT3(0.05);
+end	
+
+rule "E_7_TIpodeExperienciadelEmprendimientoenelEcosistema"
+	when
+		$j: PerfilAnalizado(E_7_TIpodeExperienciadelEmprendimientoenelEcosistema != "" && E_7_TIpodeExperienciadelEmprendimientoenelEcosistema != null)
+	then
+		System.out.println("E_7_TIpodeExperienciadelEmprendimientoenelEcosistema (T3)"); 
+		$j.setT3(0.05);
+end	
+
+rule "C_1_Existenciadeunequipogestor"
+	when
+		$j: PerfilAnalizado(C_1_Existenciadeunequipogestor == 1)
+	then
+		System.out.println("C_1_Existenciadeunequipogestora (T1)"); 
+		$j.setT1(0.025);
+end	
+
+rule "FI_2_Compromisodelequipomínimorequerido"
+	when
+		$j: PerfilAnalizado(Integer.parseInt(FI_2_Compromisodelequipomínimorequerido == null || FI_2_Compromisodelequipomínimorequerido.equals("") ? "0" : FI_2_Compromisodelequipomínimorequerido) >= 2)
+	then
+		System.out.println("FI_2_Compromisodelequipomínimorequerido (T1)"); 
+		$j.setT1(0.025);
+end	
+
+rule "PF_2_Númerodemiembrosconpaquetesaccionarios"
+	when
 	
+		$j: PerfilAnalizado(Integer.parseInt(PF_2_Númerodemiembrosconpaquetesaccionarios == null || PF_2_Númerodemiembrosconpaquetesaccionarios.equals("") ? "0" : PF_2_Númerodemiembrosconpaquetesaccionarios) >= 50)
+	then
+		System.out.println("PF_2_Númerodemiembrosconpaquetesaccionarios (T1)"); 
+		$j.setT1(0.025);
+end	
+
+rule "IF_1_MontoInvertidoporlosfundadores"
+	when
+		$j: PerfilAnalizado(IF_1_MontoInvertidoporlosfundadores != "" && IF_1_MontoInvertidoporlosfundadores != null)
+	then
+		System.out.println("IF_1_MontoInvertidoporlosfundadores (T1)"); 
+		$j.setT1(0.025);
+end
+
+rule "VD_1_Losdatossonveraces"
+	when
+		$j: PerfilAnalizado(VD_1_Losdatossonveraces == 1)
+	then
+		System.out.println("VD_1_Losdatossonveraces (T4)"); 
+		$j.setT4(0.1);
+end		
+
+
+rule "PV_1_ImportanciaparaelCliente"
+	when
+		$j: PerfilAnalizado(PV_1_ImportanciaparaelCliente == 3)
+	then
+		System.out.println("PV_1_ImportanciaparaelCliente (C2)"); 
+		$j.setC2(0.025);
+end
+
+rule "PV_3_Tieneundesempeñosobresaliente"
+	when
+		$j: PerfilAnalizado(PV_3_Tieneundesempeñosobresaliente == 3)
+	then
+		System.out.println("PV_3_Tieneundesempeñosobresaliente (O1)"); 
+		$j.setO1(0.025);
+end		
+
+
+rule "PV_5_AlineadoconlasmétricasdeÉxitodelCliente"
+	when
+		$j: PerfilAnalizado(PV_5_AlineadoconlasmétricasdeÉxitodelCliente == 3)
+	then
+		System.out.println("PV_5_AlineadoconlasmétricasdeÉxitodelCliente (C2)"); 
+		$j.setC2(0.025);
+end			
+
+rule "PV_8_DesempeñoSobresaliente"
+	when
+		$j: PerfilAnalizado(PV_8_DesempeñoSobresaliente == 3)
+	then
+		System.out.println("PV_8_DesempeñoSobresaliente (O3)"); 
+		$j.setO3(0.01666667);
+end	
+
+rule "PV_9_DifícildeCopiar"
+	when
+		$j: PerfilAnalizado(PV_9_DifícildeCopiar == 3)
+	then
+		System.out.println("PV_9_DifícildeCopiar (O3)"); 
+		$j.setO3(0.01666667);
+end
+
+rule "MN_2_IngresosRecurrentes"
+	when
+		$j: PerfilAnalizado(MN_2_IngresosRecurrentes == 3)
+	then
+		System.out.println("MN_2_IngresosRecurrentes (O2)"); 
+		$j.setO2(0.01666667);
+end		
+
+rule "MN_4_Laestructuradecostosesdiferencial"
+	when
+		$j: PerfilAnalizado(MN_4_Laestructuradecostosesdiferencial == 3)
+	then
+		System.out.println("MN_4_Laestructuradecostosesdiferencial (O2)"); 
+		$j.setO2(0.01666667);
+end		
+
+rule "MN_7_Proteccióndelacompetencia"
+	when
+		$j: PerfilAnalizado(MN_7_Proteccióndelacompetencia == 3)
+	then
+		System.out.println("MN_7_Proteccióndelacompetencia (C3)"); 
+		$j.setC3(0.01666667);
+end		
+
+
+
+rule "PMF_1_PruebasyValidaciónconClientesreales"
+	when
+		$j: PerfilAnalizado(PMF_1_PruebasyValidaciónconClientesreales == 1)
+	then
+		System.out.println("PMF_1_PruebasyValidaciónconClientesreales (O3)"); 
+		$j.setO3(0.01666667);
+end					
+
+
+rule "DPP_1_Experienciassimilaresenelmercado"
+	when
+		$j: PerfilAnalizado(DPP_1_Experienciassimilaresenelmercado == 1)
+	then
+		System.out.println("DPP_1_Experienciassimilaresenelmercado (C1)"); 
+		$j.setC1(0.01666667);
+end	
+
+
+rule "TD_1_TecnologíaExponencial"
+	when
+		$j: PerfilAnalizado(TD_1_TecnologíaExponencial == 1)
+	then
+		System.out.println("TD_1_TecnologíaExponencial (O2)"); 
+		$j.setO2(0.01666667);
+end	
+
+
+rule "TD_3_Referentesdeusodeestatecnología"
+	when
+		$j: PerfilAnalizado(TD_3_Referentesdeusodeestatecnología == 1)
+	then
+		System.out.println("TD_3_Referentesdeusodeestatecnología (O1)"); 
+		$j.setO1(0.025);
+end	
+
+
+rule "BER_1_ExistenciadeBarrerasdeEntradaenelMercado"
+	when
+		$j: PerfilAnalizado(BER_1_ExistenciadeBarrerasdeEntradaenelMercado == 0)
+	then
+		System.out.println("BER_1_ExistenciadeBarrerasdeEntradaenelMercado (C4)"); 
+		$j.setC4(0.025);
+end	
+
+
+rule "BER_2_FavorabilidaddelaRegulaciónenestemercado"
+	when
+		$j: PerfilAnalizado(BER_2_FavorabilidaddelaRegulaciónenestemercado == 1)
+	then
+		System.out.println("BER_2_FavorabilidaddelaRegulaciónenestemercado (C4)"); 
+		$j.setC4(0.025);
+end	
+
+
+
+
+
+
+
+
+
+
+rule "PEXP_1_PlandeExpansiónRegional"
+	when
+		$j: PerfilAnalizado(PEXP_1_PlandeExpansiónRegional == 1)
+	then
+		System.out.println("PEXP_1_PlandeExpansiónRegional (C1)"); 
+		$j.setC1(0.0166667);
+end	
+
+rule "PEXP_2_TiempoparainiciarelPlandeExpansión"
+	when
+		$j: PerfilAnalizado(Integer.parseInt(PEXP_2_TiempoparainiciarelPlandeExpansión == null || PEXP_2_TiempoparainiciarelPlandeExpansión.equals("") ? "0" : PEXP_2_TiempoparainiciarelPlandeExpansión) >= 24)
+	then
+		System.out.println("PEXP_2_TiempoparainiciarelPlandeExpansión (C1)"); 
+		$j.setC1(0.0166667);
+end	
+
+rule "COMP_1_ExistenciadeCompetidoresLocales"
+	when
+		$j: PerfilAnalizado(COMP_1_ExistenciadeCompetidoresLocales == 0)
+	then
+		System.out.println("COMP_1_ExistenciadeCompetidoresLocales (C3)"); 
+		$j.setC3(0.0166667);
+end	
+
+rule "COMP_2_ExistenciadeCompetidoresRegionales"
+	when
+		$j: PerfilAnalizado(COMP_2_ExistenciadeCompetidoresRegionales == 0)
+	then
+		System.out.println("COMP_2_ExistenciadeCompetidoresRegionales (C3)"); 
+		$j.setC3(0.0166667);
+end	
+
+rule "UE_1_TiquetePromedioHoy"
+	when
+		$j: PerfilAnalizado(UE_1_TiquetePromedioHoy  != "" && UE_1_TiquetePromedioHoy != null)
+	then
+		System.out.println("UE_1_TiquetePromedioHoy (O4)"); 
+		$j.setO4(0.01);
+end	
+
+rule "UE_5_EBITDA"
+	when
+		$j: PerfilAnalizado(UE_5_EBITDA != "" && UE_5_EBITDA != null)
+	then
+		System.out.println("UE_5_EBITDA (O4)"); 
+		$j.setO4(0.01);
+end	
+
+rule "UE_6_VENTAS"
+	when
+		$j: PerfilAnalizado(UE_6_VENTAS != "" && UE_6_VENTAS != null)
+	then
+		System.out.println("UE_6_VENTAS (O4)"); 
+		$j.setO4(0.01);
+end	
+
+rule "UE_8_Rentabilidad"
+	when
+		$j: PerfilAnalizado(UE_8_Rentabilidad != "" && UE_8_Rentabilidad != null)
+	then
+		System.out.println("UE_8_Rentabilidad (O4)"); 
+		$j.setO4(0.01);
+end	
+
+rule "PE_3_Puntodeequilibrio"
+	when
+		$j: PerfilAnalizado(PE_3_Puntodeequilibrio != "" && PE_3_Puntodeequilibrio != null)
+	then
+		System.out.println("PE_3_Puntodeequilibrio (O4)"); 
+		$j.setO4(0.01);
+end	
+
+rule "RI_1_RondadeInversiónalaqueaccedería"
+	when
+		$j: PerfilAnalizado(RI_1_RondadeInversiónalaqueaccedería != "" && RI_1_RondadeInversiónalaqueaccedería != null)
+	then
+		System.out.println("RI_1_RondadeInversiónalaqueaccedería (D2)"); 
+		$j.setD2(0.025);
+end	
+
+rule "VC_1_ValoracióndelaCompañía"
+	when
+		$j: PerfilAnalizado(VC_1_ValoracióndelaCompañía != "" && VC_1_ValoracióndelaCompañía != null)
+	then
+		System.out.println("VC_1_ValoracióndelaCompañía (D2)"); 
+		$j.setD2(0.025);
+end	
+
+rule "CN_2_ValoraciónJustificadasegúnelequipoemprendedor"
+	when
+		$j: PerfilAnalizado(CN_2_ValoraciónJustificadasegúnelequipoemprendedor != "" && CN_2_ValoraciónJustificadasegúnelequipoemprendedor != null)
+	then
+		System.out.println("CN_2_ValoraciónJustificadasegúnelequipoemprendedor (D3)"); 
+		$j.setD3(0.025);
+end	
+
+rule "CN_3_ValoraciónJustificadasegúnPotencialdeMercado"
+	when
+		$j: PerfilAnalizado(CN_3_ValoraciónJustificadasegúnPotencialdeMercado != "" && CN_3_ValoraciónJustificadasegúnPotencialdeMercado != null)
+	then
+		System.out.println("CN_3_ValoraciónJustificadasegúnPotencialdeMercado (D3)"); 
+		$j.setD3(0.025);
+end	
+
+
+rule "CN_4_NotaConvertibleoAcciones"
+	when
+		$j: PerfilAnalizado(CN_4_NotaConvertibleoAcciones == 1)
+	then
+		System.out.println("CN_4_NotaConvertibleoAcciones (D4)"); 
+		$j.setD4(0.025);
+end	
+
+rule "CN_5_OtorgaríaParticipación"
+	when
+		$j: PerfilAnalizado(CN_5_OtorgaríaParticipación == 1)
+	then
+		System.out.println("CN_5_OtorgaríaParticipación (D4)"); 
+		$j.setD4(0.025);
+end	
+
+rule "CN_7_DisposiciónaNegociar"
+	when
+		$j: PerfilAnalizado(CN_7_DisposiciónaNegociar == 1)
+	then
+		System.out.println("CN_7_DisposiciónaNegociar (D1)"); 
+		$j.setD1(0.025);
+end	
+
+rule "PAV_1_ReddeMentoría"
+	when
+		$j: PerfilAnalizado(PAV_1_ReddeMentoría == 1)
+	then
+		System.out.println("PAV_1_ReddeMentoría (D1)"); 
+		$j.setD1(0.025);
+end	
